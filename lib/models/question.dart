@@ -6,6 +6,10 @@ class Question {
 
   Question(this.caption, this.answers, this.correctAnswer, this.hint);
 
+  factory Question.none() {
+    return Question("", ["", "", "", ""], "", "");
+  }
+
   factory Question.fromJson(Map<String, dynamic> json) {
     List<String> answers = json['answers'].cast<String>();
 
