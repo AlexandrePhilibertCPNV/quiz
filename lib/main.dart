@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:quiz/managers/question_manager.dart';
-import 'package:quiz/screens/game_screen.dart';
+import 'package:quiz/managers/game_manager.dart';
+import 'package:quiz/managers/score_manager.dart';
+import 'package:quiz/screens/home_screen.dart';
 
 GetIt getIt = GetIt.instance;
 
 void main() {
-  QuestionManager.register();
+  GameManager.register();
+  ScoreManager.register();
 
   runApp(const App());
 }
@@ -21,7 +23,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: GameScreen(),
+      home: const HomeScreen(),
     );
   }
 }

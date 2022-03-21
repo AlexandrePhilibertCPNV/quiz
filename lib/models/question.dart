@@ -6,7 +6,7 @@ class Question {
 
   Question(this.caption, this.answers, this.correctAnswer, this.hint);
 
-  factory Question.none() {
+  factory Question.empty() {
     return Question("", ["", "", "", ""], "", "");
   }
 

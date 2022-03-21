@@ -10,7 +10,6 @@ class QuestionManager {
 
   QuestionManager(this._provider) {
     _streamController = StreamController();
-    next();
   }
 
   Stream<Question> get stream => _streamController.stream;
@@ -21,6 +20,10 @@ class QuestionManager {
 
   static void register() {
     GetIt.I.registerLazySingleton(() => QuestionManager(QuestionIoProvider()));
+  }
+
+  void closeStream() {
+    _streamController.close();
   }
 
   static QuestionManager get instance => GetIt.I.get<QuestionManager>();
